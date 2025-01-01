@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!-- Türkçe dil desteği -->
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <!-- Mobil cihaz uyumluluğu için viewport ayarı -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gelişmiş VKİ Hesaplayıcı</title>
+    <!-- Stil dosyası bağlantısı -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Ana konteyner -->
+    <div class="container">
+        <h1>Gelişmiş VKİ Hesaplayıcı</h1>
+        <!-- Hesaplayıcı bölümü -->
+        <div class="calculator">
+            <!-- Giriş alanları grid düzeni -->
+            <div class="input-grid">
+                <!-- Kilo giriş alanı -->
+                <div class="input-group">
+                    <label for="weight">Kilonuz (kg)</label>
+                    <input type="number" id="weight" placeholder="Örn: 70" min="30" max="999" step="0.1">
+                </div>
+                <!-- Boy giriş alanı -->
+                <div class="input-group">
+                    <label for="height">Boyunuz (cm)</label>
+                    <input type="number" id="height" placeholder="Örn: 170" min="100" max="300" step="1">
+                </div>
+                <!-- Yaş giriş alanı -->
+                <div class="input-group">
+                    <label for="age">Yaşınız</label>
+                    <input type="number" id="age" placeholder="Örn: 25" min="18" max="200" step="1">
+                </div>
+                <!-- Cinsiyet seçim alanı -->
+                <div class="input-group">
+                    <label for="gender">Cinsiyetiniz</label>
+                    <select id="gender">
+                        <option value="male">Erkek</option>
+                        <option value="female">Kadın</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Hesaplama butonu -->
+            <button onclick="calculateBMI()">Hesapla</button>
+            <!-- VKİ sonuç değeri -->
+            <div class="big-bmi" id="bmi-value">-</div>
+            <!-- Sonuç bölümü -->
+            <div class="result" id="result">
+                <p>Durum: <span id="bmi-status">-</span></p>
+                <p>İdeal Kilo Aralığı: <span id="ideal-weight">-</span></p>
+            </div>
+            <!-- Tavsiyeler bölümü -->
+            <div class="recommendations" id="recommendations">
+                <h3>Kişisel Sağlık Tavsiyeleri</h3>
+                <!-- Yaşa özel tavsiyeler -->
+                <div id="age-recommendations" class="recommendation-section">
+                    <h4>Yaşınıza Özel Tavsiyeler:</h4>
+                    <p id="age-specific-advice">-</p>
+                </div>
+                <!-- VKİ'ye özel tavsiyeler -->
+                <div id="bmi-recommendations" class="recommendation-section">
+                    <h4>VKİ Durumunuza Özel Tavsiyeler:</h4>
+                    <p id="bmi-specific-advice">-</p>
+                </div>
+                <!-- Genel sağlık tavsiyeleri -->
+                <div id="general-recommendations" class="recommendation-section">
+                    <h4>Genel Sağlık Tavsiyeleri:</h4>
+                    <p id="general-advice">-</p>
+                </div>
+            </div>
+            <!-- VKİ bilgi tablosu -->
+            <div class="bmi-info">
+                <h3>VKİ Değerlendirmesi:</h3>
+                <div class="info-grid">
+                    <div class="info-item">Zayıf: <18.5</div>
+                    <div class="info-item">Normal: 18.5 - 24.9</div>
+                    <div class="info-item">Fazla Kilolu: 25 - 29.9</div>
+                    <div class="info-item">Obez (1): 30 - 34.9</div>
+                    <div class="info-item">Obez (2): 35 - 39.9</div>
+                    <div class="info-item">Morbid: >40</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bildirim çubuğu -->
+    <div id="snackbar" class="snackbar"></div>
+    <!-- JavaScript dosyası bağlantısı -->
+    <script src="script.js"></script>
+</body>
+</html> 

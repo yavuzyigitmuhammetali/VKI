@@ -1,0 +1,367 @@
+/* Temel stil sıfırlama ve font ayarları */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sayfa arka plan animasyonu ve düzeni */
+body {
+    height: 100vh;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Arka plan gradyan animasyonu */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Ana konteyner stil ayarları */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2),
+                0 0 20px rgba(255, 255, 255, 0.3);
+    width: 100%;
+    max-width: 600px;
+    max-height: 95vh;
+    overflow-y: auto;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Başlık stili */
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hesaplayıcı bölümü düzeni */
+.calculator {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Giriş alanları grid düzeni */
+.input-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+/* Giriş grubu stil ayarları */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Form etiketleri stili */
+label {
+    color: #555;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Form giriş alanları ve seçim kutuları stili */
+input, select {
+    padding: 12px;
+    border: 2px solid rgba(52, 152, 219, 0.3);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Form elemanları odaklandığında stil */
+input:focus, select:focus {
+    outline: none;
+    border-color: #00c6ff;
+    box-shadow: 0 0 15px rgba(0, 198, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Hesapla butonu stili */
+button {
+    background: linear-gradient(45deg, #FF3CAC, #784BA0, #2B86C5);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-size: 200% auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Buton hover efekti */
+button:hover {
+    background-position: right center;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Sonuç bölümü stili */
+.result {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Sonuç metinleri stili */
+.result p {
+    margin: 8px 0;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+/* Sonuç değerleri stili */
+.result span {
+    font-weight: bold;
+    color: #0083b0;
+}
+
+/* VKİ bilgi bölümü stili */
+.bmi-info {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* VKİ bilgi başlığı */
+.bmi-info h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+/* VKİ kategorileri grid düzeni */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+/* VKİ kategori kutuları stili */
+.info-item {
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(52, 152, 219, 0.2);
+}
+
+/* Aktif VKİ kategorisi stili */
+.info-item.active {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 114, 255, 0.3),
+                0 0 20px rgba(0, 198, 255, 0.5);
+    animation: neonPulse 1.5s infinite;
+}
+
+/* Aktif kategori neon efekti animasyonu */
+@keyframes neonPulse {
+    0% {
+        box-shadow: 0 4px 15px rgba(0, 114, 255, 0.3),
+                    0 0 20px rgba(0, 198, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(0, 114, 255, 0.5),
+                    0 0 30px rgba(0, 198, 255, 0.7);
+    }
+    100% {
+        box-shadow: 0 4px 15px rgba(0, 114, 255, 0.3),
+                    0 0 20px rgba(0, 198, 255, 0.5);
+    }
+}
+
+#bmi-value {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.bmi-integer {
+    font-size: 2.5em;
+}
+
+.bmi-decimal {
+    font-size: 1.8em;
+}
+
+.info-item {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f5f6fa;
+    transition: all 0.3s ease;
+}
+
+.info-item.active {
+    background-color: #3498db;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1.05);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    .input-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.big-bmi {
+    font-size: 3.5rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    padding: 20px;
+    margin: 10px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Tavsiyeler bölümü stili */
+.recommendations {
+    background: rgba(248, 249, 250, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 15px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Tavsiyeler başlığı */
+.recommendations h3 {
+    color: #0083b0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Tavsiye bölümleri stili */
+.recommendation-section {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Tavsiye bölümü hover efekti */
+.recommendation-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Tavsiye alt başlıkları */
+.recommendation-section h4 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+/* Tavsiye metinleri */
+.recommendation-section p {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Bildirim çubuğu stili */
+.snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2),
+                0 0 20px rgba(0, 198, 255, 0.3);
+}
+
+/* Bildirim gösterme animasyonu */
+.snackbar.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Bildirim belirme animasyonu */
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+/* Bildirim kaybolma animasyonu */
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+/* Mobil cihaz uyumluluğu */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    .input-grid {
+        grid-template-columns: 1fr;
+    }
+} 
